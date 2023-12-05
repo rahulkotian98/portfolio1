@@ -742,13 +742,13 @@ main {
   scroll-snap-type: inline mandatory;
   scroll-padding-inline: 25px;
 }
-/**
 
+/* ... rest of your CSS ..
 .clients-item {
   min-width: 50%;
   scroll-snap-align: start;
-
-	*/
+ */
+	
 	.clients-item {
   position: relative;
   background: var(--border-gradient-onyx);
