@@ -756,6 +756,48 @@ main {
 
 .clients-item img:hover { filter: grayscale(0); }
 
+/**
+ * #YAHA SE MODIFY KIYA  
+ */
+.client-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.client-item {
+  position: relative;
+  background: var(--border-gradient-onyx);
+  padding: 40px; /* doubled from 20px */
+  border-radius: 28px; /* doubled from 14px */
+  box-shadow: var(--shadow-2);
+  z-index: 1;
+}
+
+.client-item::before {
+  content: "";
+  position: absolute;
+  inset: 2px; /* doubled from 1px */
+  background: var(--bg-gradient-jet);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.client-icon-box { margin-bottom: 20px; /* doubled from 10px */ }
+
+.client-icon-box img { margin: auto; }
+
+.client-content-box { text-align: center; }
+
+.client-item-title { margin-bottom: 14px; /* doubled from 7px */ }
+
+.client-item-text {
+  color: var(--light-gray);
+  font-size: var(--fs-3); /* assuming the next size up is double */
+  font-weight: var(--fw-3);
+  line-height: 3.2; /* doubled from 1.6 */
+}
+
 
 
 
