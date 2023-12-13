@@ -163,25 +163,20 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    const projectLinks = document.querySelectorAll('.project-link');
+    const modals = document.querySelectorAll('.modal');
+    const modalCloses = document.querySelectorAll('[data-modal-close]');
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const projectItems = document.querySelectorAll('.project-item');
+    projectLinks.forEach((link, index) => {
+      link.addEventListener('click', function () {
+        modals[index].style.display = 'flex';
+      });
+    });
 
-    projectItems.forEach(item => {
-      item.addEventListener('click', function () {
-        // Show the modal for the clicked project item
-        const modal = this.querySelector('.project-details-modal');
-        if (modal) {
-          modal.classList.add('active');
-        }
+    modalCloses.forEach(close => {
+      close.addEventListener('click', function () {
+        this.closest('.modal').style.display = 'none';
       });
     });
   });
-
-  function closeModal(button) {
-    // Close the modal when the close button is clicked
-    const modal = button.closest('.project-details-modal');
-    if (modal) {
-      modal.classList.remove('active');
-    }
-  }
