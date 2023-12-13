@@ -169,14 +169,19 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
     projectItems.forEach(item => {
       item.addEventListener('click', function () {
-        // Toggle the 'active' class for the clicked project item
-        this.classList.toggle('active');
-
-        // Toggle the 'active' class for the details section of the clicked project item
-        const details = this.querySelector('.project-details');
-        if (details) {
-          details.classList.toggle('active');
+        // Show the modal for the clicked project item
+        const modal = this.querySelector('.project-details-modal');
+        if (modal) {
+          modal.classList.add('active');
         }
       });
     });
   });
+
+  function closeModal(button) {
+    // Close the modal when the close button is clicked
+    const modal = button.closest('.project-details-modal');
+    if (modal) {
+      modal.classList.remove('active');
+    }
+  }
