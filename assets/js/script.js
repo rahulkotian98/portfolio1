@@ -157,3 +157,26 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+
+
+
+
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const projectItems = document.querySelectorAll('.project-item');
+
+    projectItems.forEach(item => {
+      item.addEventListener('click', function () {
+        // Toggle the 'active' class for the clicked project item
+        this.classList.toggle('active');
+
+        // Toggle the 'active' class for the details section of the clicked project item
+        const details = this.querySelector('.project-details');
+        if (details) {
+          details.classList.toggle('active');
+        }
+      });
+    });
+  });
