@@ -162,21 +162,3 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
 
 
-
-document.addEventListener("DOMContentLoaded", function () {
-    const projectLinks = document.querySelectorAll('.project-link');
-    const modals = document.querySelectorAll('.modal');
-    const modalCloses = document.querySelectorAll('[data-modal-close]');
-
-    projectLinks.forEach((link, index) => {
-      link.addEventListener('click', function () {
-        modals[index].style.display = 'flex';
-      });
-    });
-
-    modalCloses.forEach(close => {
-      close.addEventListener('click', function () {
-        this.closest('.modal').style.display = 'none';
-      });
-    });
-  });
