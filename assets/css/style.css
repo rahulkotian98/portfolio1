@@ -1042,18 +1042,6 @@ main {
 }
 
 
-/*-----------------------------------*\
-  #EXTRAAAA ADD KIYA HAI MAINE NICHE WALA
-\*-----------------------------------*/
-
-<script>
-  function openModal(modalId) {
-    const modal = document.getElementById(modalId);
-    modal.style.display = 'block';
-  }
-</script>
-
-
 
 /*-----------------------------------*\
   #BLOG
