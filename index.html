@@ -1,89 +1,1660 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <!-- Include Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-lY93mxh3TZ6ZihXemN0tRZm3FmJ4Yuw0KlQFbfPhL4I2v7O/wqI0VBVWBE5SkhA/" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
   <title>Personal Portfolio</title>
 
+  <!--
+    - favicon
+  -->
   <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
 
+  <!--
+    - custom css link
+  -->
   <link rel="stylesheet" href="./assets/css/style.css">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
+  <!--
+    - #MAIN
+  -->
+
   <main>
+
+    <!--
+      - #SIDEBAR
+    -->
 
     <aside class="sidebar" data-sidebar>
 
       <div class="sidebar-info">
+
         <figure class="avatar-box">
           <img src="./assets/images/RK copy.png" alt="Rahul Kotian" width="80">
         </figure>
+       
         <div class="info-content">
           <h1 class="name" title="Rahul Kotian">Rahul Kotian</h1>
+
           <p class="title">Software Engineer</p>
         </div>
+
         <button class="info_more-btn" data-sidebar-btn>
           <span>Show Contacts</span>
+
           <ion-icon name="chevron-down"></ion-icon>
         </button>
+
       </div>
 
       <div class="sidebar-info_more">
+
         <div class="separator"></div>
+
         <ul class="contacts-list">
+
           <li class="contact-item">
+
             <div class="icon-box">
               <ion-icon name="mail-outline"></ion-icon>
             </div>
+
             <div class="contact-info">
               <p class="contact-title">Email</p>
+
               <a href="mailto:rahulkotian269@gmail.com" class="contact-link">rahulkotian269@gmail.com</a>
             </div>
+
           </li>
+
+
+  
+<!--           <li class="contact-item"> 
+
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+
+              <address>New York, USA</address>
+            </div>
+
+          </li>
+ -->
         </ul>
+
         <div class="separator"></div>
+
         <ul class="social-list">
+
           <li class="social-item">
             <a href="https://www.linkedin.com/in/rahulkotian26" target="_blank" class="social-link">
               <ion-icon name="logo-linkedin"></ion-icon>
             </a>
           </li>
+
+
         </ul>
+
       </div>
 
     </aside>
 
 
-    <div class="main-content">
-      <nav class="navbar"> 
-        </nav>
 
-      <article class="about active" data-page="about">
-        </article>
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>About</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Resume</button>
+          </li>
+
+    <!--
+        - #NAVBAR
+  
+       <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Technologies</button>
+          </li>
+    -->
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Publication</button>
+          </li>
+
+           <!--
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Projects</button>
+          </li>
+    -->
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Contact</button>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+
+
+      <!--
+        - #ABOUT
+      -->
+
+      <article class="about  active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+An accomplished Information Systems professional with extensive data science, cloud technologies, and business analytics expertise. Holding a Master of Science in Information Systems from Syracuse University and a Bachelor of Engineering in Computer Engineering from Mumbai University, I bring a solid foundation in programming, database management, and strategic decision-making.
+          </p>
+          
+          <p>
+Adept at leveraging cutting-edge technologies such as Java, Spring Boot, Python, R, SQL, Azure, AWS, and machine learning libraries like TensorFlow and scikit-learn. Experienced in developing robust back-end infrastructures, RESTful APIs, and deploying applications on cloud platforms like Azure Spring Apps. Proficient in data modeling, schema design, and optimizing data retrieval and storage operations.
+          </p>
+
+          <p>
+Demonstrated success in conducting comprehensive data analyses, leveraging tools like Power BI, Tableau, and SAS to derive actionable insights and drive strategic decision-making. Proven ability to implement innovative solutions, such as an energy resource tracking system that reduced energy usage by 15% within a $2.11 billion enterprise.
+
+            <p>
+Committed to continuous learning and knowledge sharing, with a track record of leading peer sessions and fostering collaborative environments. Passionate about UX research, having influenced product development at industry giants like Google, Meta, and Spotify through insightful user experience initiatives.
+            </p>
+Combining technical prowess, analytical abilities, and a strategic mindset, I am well-positioned to drive impactful solutions and contribute to organizational success in the dynamic field of information management.          </p>
+        </section>
+
+
+        <!--
+          - service
+        -->
+
+        <section class="service">
+
+          <h3 class="h3 service-title">My Top Skills</h3>
+
+          <ul class="service-list">
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/analytics_white.svg" alt="waterfall_chart_white icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Data Visualization</h4>
+
+                <p class="service-item-text">
+                  I automated data reporting in my previous job using SSAS.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/DA.svg" alt="Others icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Data Analysis</h4>
+
+                <p class="service-item-text">
+                  I perform data analysis and derive insightful results.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+ <!--
+        
+              <div class="service-icon-box">
+                <img src="./assets/images/waterfall_chart_black.svg" alt="waterfall_chart_black icon" width="40">
+              </div>
+        -->
+              <div class="service-icon-box">
+                <img src="./assets/images/waterfall_chart_white.svg" alt="waterfall_chart_white icon" width="40">
+              </div>
+              
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Project Management</h4>
+
+                <p class="service-item-text">
+                  I under commit and over deliver projects on time.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/BA9.svg" alt="camera icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Business Analytics</h4>
+
+                <p class="service-item-text">
+                  I make great business decisions to help save companies money, time and energy.
+                </p>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </section>
+
+
+
+                <!--
+          - service
+        -->
+
+        <section class="service">
+
+          <h3 class="h3 service-title">My previous Employers</h3>
+
+          <ul class="service-list">
+
+            <li class="service-item">
+
+           <!--
+         <div class="service-icon-box">
+                  <img src="./assets/images/icon-design.svg
+                " alt="design icon" width="40">    
+              </div>
+               -->  
+
+              <div class="service-content-box">
+
+              <a href="https://www.dynamicslab.org" target="_blank">
+                <img src="./assets/images/dsllab.png" alt="client logo">
+              </a>
+  
+              </div>
+
+              
+            <li class="service-item">
+ <div class="service-content-box">
+
+              <a href="https://e.issuu.com/embed.html?d=annualreport2023v2-pages&u=dynamicslabsu#page=23" target="_blank">
+                <img src="./assets/images/ss.png" alt="client logo">
+              </a>
+  
+              </div>
+
+            </li>
+
+            </li>
+
+
+            
+             
+            <li class="service-item">
+
+             <!--     <div class="service-icon-box">
+               
+   <img src="./assets/images/icon-dev.svg" alt="Others icon" width="40">     
+              </div>
+-->  
+              <div class="service-content-box">
+               <a href="https://www.stickley.com" target="_blank">
+                <img src="./assets/images/stickley.png" alt="client logo">
+              </a>
+              </div>
+
+            </li>
+
+      
+
+          </ul>
+
+        </section>
+
+
+        <!--
+          - testimonials
+        -->
+
+                  <ul class="testimonials-list has-scrollbar">
+        <section class="testimonials">
+
+<h3 class="h3 testimonials-title">
+    <i class="fas fa-thumbs-up"></i> Recommendations
+</h3>
+          
+
+       <!--   <ul class="testimonials-list has-scrollbar">    -->
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/avatar-1.png" alt="Karan Someshwar" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Karan Someshwar</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+
+
+  <p>I am writing to recommend Rahul for any project management role wholeheartedly. In my experience working with him, he has consistently demonstrated exceptional skills and qualities that make him an outstanding project manager.</p>
+  <br> <!-- This creates a blank line -->
+
+  <p>From the inception to the successful completion of our project, Rahul was instrumental in every phase. He exhibited a clear understanding of the project objectives and devised a comprehensive plan that ensured we stayed on track. His ability to foresee potential challenges and proactively address them was truly remarkable, leading to a smooth execution of the project.</p>
+  <br> <!-- This creates a blank line -->
+
+  <p>Rahul's coordination skills were exemplary. He fostered a collaborative environment, effectively coordinating between different teams and ensuring everyone was aligned with the project goals. His communication was always clear, timely, and respectful, which greatly contributed to the team's morale and productivity.</p>
+  <br> <!-- This creates a blank line -->
+
+  <p>Moreover, Rahul displayed great leadership qualities. He was always approachable, patient, and ready to provide guidance whenever needed. His positive attitude and commitment to the project were infectious, inspiring the team to deliver their best.</p>
+  <br> <!-- This creates a blank line -->
+
+  <p>In conclusion, Rahul is a highly competent project manager with a proven track record of successful project execution. His exceptional skills and admirable personality traits would be a valuable asset to any team. I do not doubt that he will continue to produce remarkable results in his future endeavors.</p>
+  <br> <!-- This creates a blank line -->
+
+  <p>Best Regards,<br>
+  Karan</p>
+                    
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/avatar-2.png" alt="Tamta Deisadze" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Tamta Deisadze</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+
+
+  <p>I had the pleasure of working with Rahul Kotian on a complex data analysis project at Syracuse University, School of Information Studies and I was consistently impressed by his exceptional skills and dedication towards his job.</p>
+  <br> <!-- This creates a blank line -->
+
+  <p> Rahul demonstrated a profound understanding of data analytics, consistently providing insights that were not only accurate but also creatively approached.</p>
+  <br> <!-- This creates a blank line -->
+
+  <p>His ability to manage large datasets with ease contributed to the success of our project. Rahul is a team player who communicates complex data concepts in a clear and understandable manner, making collaboration smooth and productive.</p>
+  <br> <!-- This creates a blank line -->
+
+  <p>His passion for data analysis and attention to detail sets him apart</p>
+  <br> <!-- This creates a blank line -->
+
+  <p>I am confident that Rahul will be an invaluable asset to any team, and I look forward to seeing his continued success in the field of data analytics.</p>
+  <br> <!-- This creates a blank line -->
+
+                    
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+
+
+
+
+  <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/avatar-4.png" alt="Grant Cheung" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Grant Cheung</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+
+
+  <p>During my time collaborating on various projects with Rahul Kotian at Syracuse University, School of Information Studies, he has consistently impressed me with his passion for learning, which is evident in his continuous pursuit of knowledge and skills enhancement.</p>
+  <br> <!-- This creates a blank line -->
+
+  <p>Throughout our collaboration, Rahul demonstrated exceptional project management skills, ensuring that deadlines were met, resources were optimized, and deliverables exceeded expectations.</p>
+  <br> <!-- This creates a blank line -->
+
+  <p>I wholeheartedly recommend Rahul Kotian for any role that requires a combination of project management expertise and data analytics proficiency.</p>
+  <br> <!-- This creates a blank line -->
+
+  <p>He is not only a hardworking professional but also a genuine pleasure to work with.</p>
+  <br> <!-- This creates a blank line -->
+                    
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+
+
+          
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/avatar-3.png" alt="Ticiana Jardim Marini" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Ticiana Jardim Marini</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+  <p>It is a true pleasure to manage Rahul in our team. Rahul, from day one, detail-oriented, took charge of his role as a data analyst with passion.</p>
+  <br> <!-- This creates a blank line -->
+
+  <p>He is currently developing our SU Campus Interactive Dashboard and created impressive research, analyzing multiple software and platforms to deliver the most sustainable approach to the project. </p>
+      <br> <!-- This creates a blank line -->
+
+     <p>The dashboard’s mission is to measure, monitor, and manage the organization’s energy, waste, and water key performance metrics more effectively to lower operation costs and greenhouse gas emissions and align with the SU Climate Action Plan.</p>
+  <br> <!-- This creates a blank line -->
+
+  <p>Rahul’s creativity, tireless work ethic, and energy are essential to the project’s success, especially during the first development months, when they are critical. He can adapt to both self-starting and collaborative environments and achieve high-quality results under deadlines.</p>
+  <br> <!-- This creates a blank line -->
+
+  <p>Having an employee of the caliber of Rahul will add significant value anywhere he works, and he will play an essential role in achieving any company’s goals.</p>
+
+
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </section>
+
+
+        <!--
+          - testimonials modal
+        -->
+
+        <div class="modal-container" data-modal-container>
+
+          <div class="overlay" data-overlay></div>
+      
+
+          <section class="testimonials-modal">
+
+            <button class="modal-close-btn" data-modal-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+            <div class="modal-img-wrapper">
+              <figure class="modal-avatar-box">
+                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
+              </figure>
+
+              <img src="./assets/images/icon-quote.svg" alt="quote icon">
+            </div>
+
+            <div class="modal-content">
+
+              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
+
+         <!--
+          - clients
+           <time datetime="2021-06-14">14 June, 2021</time>
+-->  
+              <div data-modal-text>
+                <p>
+                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
+                  lot of experience
+                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
+                  consectetur adipiscing
+                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                </p>
+              </div>
+
+            </div>
+
+          </section>
+
+        </div>
+
+
+
+  
+<!--
+          - clients
+        -->
+
+        <section class="clients">
+
+   <h3 class="h3 clients-title">UX STUDIES</h3>
+     
+<li class="clients-item"> 
+     
+         <div class="content-card">  
+ 
+<p style="color:white">
+        My contribution extends beyond technical skills; I actively participated in UX prototype studies for industry leaders such as:
+      </p>
+    </div>
+ </li>       
+
+
+          
+          <ul class="clients-list has-scrollbar">
+
+
+      
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/GENAI.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/UMG.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/Spotify.png" alt="client logo">
+              </a>
+            </li>
+
+                        <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/suntory-whisky.png" alt="client logo">
+              </a>
+            </li>
+
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/YouTube.png" alt="client logo">
+              </a>
+            </li>
+
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/Google-Pay.png" alt="client logo">
+              </a>
+            </li>
+
+
+            
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/Google-Maps.png" alt="client logo">
+              </a>
+            </li>
+
+                        
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/YouTube-shorts.png" alt="client logo">
+              </a>
+            </li>
+            
+            
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/TransPerfect.png" alt="client logo">
+              </a>
+            </li>
+          </ul>
+        </section>
+
+      </article>
+
+
+
+
+      <!--
+        - #RESUME
+      -->
 
       <article class="resume" data-page="resume">
-        </article>
+
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+
+      
+
+        
+ <section class="clients">
+
+  
+     
+<!--<li class="clients-item">          -->
+
+     
+         <div class="content-card">  
+ 
+
+ <a href="assets/images/Rahul_Kotian_Resume .pdf" target="_blank" class="pdf-button" style="color: var(--orange-yellow-crayola);">Open Resume PDF</a>
+              
+    </div>
+<!-- </li>                -->
+
+
+<!-- PDF Button Section
+<section class="pdf-section">
+  <a href="assets/images/RAHUL KOTIAN Resume.pdf" target="_blank" class="pdf-button">Open Resume PDF</a> 
+      -->
+</section>
+        
+      
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+
+            
+            <h3 class="h3">Education</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Syracuse University School of Information Studies</h4>
+              <h5 class="h5 timeline-item" style="color: white;">Master of Science - MS, Information Management</h5>
+
+              <span>Aug 2021 - May 2023</span>
+
+
+
+
+  <p class="timeline-text">
+    Courses<br>
+    IST 614: Management Principles for Information Professionals<br>
+    IST 615: Cloud Management<br>
+    IST 618: Information Policy<br>
+    IST 621: Information Management and Technology<br>
+    IST 625: Enterprise Risk Management for Information Professionals<br>
+    IST 645: Project Management<br>
+    IST 654: Information System Analysis<br>
+    IST 659: Data Admin Concepts & Database Management<br>
+    IST 678: Communication for Information Professionals<br>
+    IST 687: Introduction to Data Science<br>
+    MBC 645: Strategic Management<br>
+    SCM 755: Lean Six Sigma
+  </p>     
+                
+             
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Syracuse University</h4>
+              <h5 class="h5 timeline-item" style="color: white;">Certificate of Advanced Study (CAS) - Enterprise Technology Leadership (ETL)</h5>
+
+
+              <span>Aug 2021 - May 2023</span>
+
+
+
+
+
+  <p class="timeline-text">
+
+  </p>     
+                
+             
+
+            </li>
+
+
+            
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Mumbai University</h4>
+              <h5 class="h5 timeline-item" style="color: white;">Bachelor of Engineering - BE, Computer Engineering</h5>
+    
+              
+<span>Aug 2016 - Oct 2020</span>
+
+
+
+              <p class="timeline-text">
+
+    Courses<br>
+    CSC305: Data Structures<br>
+    CSL404: Operating System<br>
+    CSC601: Software Engineering<br>
+    IL08026: Research Methodology<br>
+    CSC603: Data Warehousing & Mining<br>
+    CSDLO7032: Big Data & Analytics<br>
+    CSC703: Artificial Intelligence & Soft Computing<br>
+    CSC604: Machine Learning<br>
+    CSC804: Cloud Computing<br>
+    CSC804: Natural Language Processing<br>
+    CSC7038: Distributed Systems and Architecture
+                
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Experience</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title" >
+    <a>Software Engineer - Thinking Healthy Plus Java App</a>
+  </h4>
+
+              <span>2023 — 2024</span>
+
+           
+  <ul class="timeline-text">
+    <li>Collaborated and engineered a robust back-end infrastructure using Java Spring Boot, RESTful APIs, and Spring Data JDBC, significantly enhancing system scalability and reliability for an app promoting healthy motherhood.</li>
+     <br> <!-- This creates a blank line -->
+
+    <li>Supported the deployment of the application on Microsoft Azure Spring Apps, ensuring seamless continuous integration and delivery and improving overall system efficiency and up-time.</li>
+      <br> <!-- This creates a blank line -->
+
+    <li>Synthesized complex data models and schemas for Azure Database for PostgreSQL, optimizing data retrieval and storage operations, which led to an improved user experience and faster application performance.</li>
+  </ul>
+
+            </li>
+
+             <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title" >
+    <a href="https://www.dynamicslab.org" target="_blank" style="color: white;">Data Analyst - Dynamic Sustainability Lab</a>
+  </h4>
+
+              <span>2022 — 2023</span>
+
+           
+  <ul class="timeline-text">
+    <li>Executed in-depth analysis of over 150 energy measurement points for a $2.11 billion enterprises, leveraging Power BI, Report Designer BI, and EnergyCAP, which unveiled the potential for a 5% efficiency enhancement in energy resource utilization.</li>
+     <br> <!-- This creates a blank line -->
+
+    <li>Initiated the creation of an advanced Power BI dashboard, amalgamating diverse data sources, performing Data Mining and Data Wrangling, designing custom visualizations, and consistently updating senior leadership.</li>
+      <br> <!-- This creates a blank line -->
+
+    <li>Orchestrated the roll-out of an innovative energy resource tracking system using Power BI and SQL Server Analysis Services (SSAS), targeting an anticipated a 15% reduction in energy usage.</li>
+      <br> <!-- This creates a blank line -->
+
+    <li>Articulated data-driven models, findings, and insights to senior management, influencing informed decision-making during the transition to a Carbon NetZero economy. The data dictionary was instrumental in communicating complex data concepts.</li>
+  </ul>
+
+            </li>
+
+   <!--
+          <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Art director</h4>
+
+              <span>2013 — 2015</span>
+
+              <p class="timeline-text">
+                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
+                quas molestias
+                exceptur.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Data Analysiser</h4>
+
+              <span>2010 — 2013</span>
+
+              <p class="timeline-text">
+                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
+                quas molestias
+                exceptur.
+              </p>
+
+            </li>
+      -->  
+          </ol>
+
+        </section>
+
+        <section class="skill">
+
+          <h3 class="h3 skills-title">My skills</h3>
+
+          <ul class="skills-list content-card">
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">SQL</h5>
+                <data value="80">80%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 80%;"></div>
+              </div>
+
+            </li>
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">JAVA</h5>
+                <data value="70">70%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 70%;"></div>
+              </div>
+
+            </li>
+            
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Python & R</h5>
+                <data value="70">70%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 70%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Microsoft Power BI</h5>
+                <data value="90">90%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 90%;"></div>
+              </div>
+
+            </li>
+
+
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #PORTFOLIO
+      -->
+
+      <article class="technologies" data-page="technologies">
+
+        <header>
+          <h2 class="h2 article-title">Technologies</h2>
+        </header>
+
+        <section class="projects">
+
+          <ul class="filter-list">
+
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Data Analysis</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Information Management</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Others</button>
+            </li>
+
+          </ul>
+
+          <div class="filter-select-box">
+
+            <button class="filter-select" data-select>
+
+              <div class="select-value" data-selecct-value>Select category</div>
+
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+
+            </button>
+
+            <ul class="select-list">
+
+              <li class="select-item">
+                <button data-select-item>All</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Data Analysis</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Information Management</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Others</button>
+              </li>
+
+            </ul>
+
+          </div>
+
+          <ul class="project-list">
+
+
+<li class="project-item active" data-filter-item data-category="others">
+  <a href="#" data-tooltip="Click to read more">
+
+    <figure class="project-img">
+      <div class="project-item-icon-box">
+        <ion-icon name="eye-outline"></ion-icon>
+      </div>
+      <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
+    </figure>
+
+    <h3 class="project-title">Finance</h3>
+
+    <p class="project-category">Others</p>
+  </a>
+</li>
+
+            <li class="project-item  active" data-filter-item data-category="others">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-2.png" alt="orizon" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Orizon</h3>
+
+                <p class="project-category">Others</p>
+
+              </a>
+            </li>
+
+            
+            <li class="project-item  active" data-filter-item data-category="data analysis">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-3.jpg" alt="fundo" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Fundo</h3>
+
+                <p class="project-category">Data Analysis</p>
+
+              </a>
+            </li>
+
+
+
+
+
+
+
+            
+            <li class="project-item  active" data-filter-item data-category="information management">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-4.png" alt="brawlhalla" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Brawlhalla</h3>
+
+                <p class="project-category">Information Management</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="data analysis">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-5.png" alt="dsm." loading="lazy">
+                </figure>
+
+                <h3 class="project-title">DSM.</h3>
+
+                <p class="project-category">Data Analysis</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="data analysis">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-6.png" alt="metaspark" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">MetaSpark</h3>
+
+                <p class="project-category">Data Analysis</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="others">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-7.png" alt="summary" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Summary</h3>
+
+                <p class="project-category">Others</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="information management">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-8.jpg" alt="task manager" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Task Manager</h3>
+
+                <p class="project-category">Information Management</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="others">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-9.png" alt="arrival" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Arrival</h3>
+
+                <p class="project-category">Others</p>
+
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+
+
+
+      <!--
+        - #PUBLICATION
+      -->
 
       <article class="publication" data-page="publication">
-        </article>
 
+        <header>
+          <h2 class="h2 article-title">Publication</h2>
+        </header>
+
+        <section class="publication-posts">
+
+          <ul class="publication-posts-list">
+
+           
+            
+            <li class="publication-post-item">
+              <a href="https://dx.doi.org/10.2139/ssrn.3703913" target="_blank">
+                
+                <figure class="publication-banner-box">
+                  <img src="./assets/images/publication-1.jpg" alt="Spoken Language Understanding using Pre-
+training Technique" loading="lazy">
+                </figure>
+
+                <div class="publication-content">
+
+                  <div class="publication-meta">
+                    <p class="publication-category">Research Paper</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Oct 5, 2020</time>
+                  </div>
+
+                  <h3 class="h3 publication-item-title">Spoken Language Understanding using Pre-
+training Technique</h3>
+
+                  <p class="publication-text">
+Proceedings of the International Conference on Recent Advances in Computational Techniques (IC-RACT) 2020
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="publication-post-item">
+              <a href="https://app.visily.ai/projects/6373667c-6f41-458d-8aca-c491f28a71b2/boards/467141/presenter?play-mode=Prototype" target="_blank">
+
+                <figure class="publication-banner-box">
+                  <img src="./assets/images/prototype.jpg" alt="UI Prototype - Information System Analysis" loading="lazy">
+                </figure>
+
+                <div class="publication-content">
+
+                  <div class="publication-meta">
+                    <p class="publication-category">Prototype</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Jan 2023</time>
+                  </div>
+
+                  <h3 class="h3 publication-item-title">UI Prototype - Information System Analysis</h3>
+
+                  <p class="publication-text">
+                    Working UI prototype of a case study called "Meeting Makers".
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+
+
+
+        <section class="publication-posts">
+  <h2 class="h2 article-title">
+    <a href="https://www.linkedin.com/in/rahulkotian26/details/certifications/" target="_blank" style="color: white;">
+      Certifications
+      <i class="fas fa-external-link-alt" style="margin-left: 5px;"></i>
+    </a>
+  </h2>
+
+  <ul class="publication-posts-list">
+
+ <li class="publication-post-item">
+        <a href="https://www.coursera.org/account/accomplishments/specialization/JS7LYV9UK9MA" target="_blank">
+
+                      <figure class="publication-banner-box">
+                 <img src="./assets/images/googleda.jpeg" alt="client logo" loading="lazy">
+            </figure>
+                <div class="publication-content">
+        <div class="publication-meta"></div>
+
+          <h3 class="h3 publication-item-title">Specialization Certificate</h3>
+          <p class="publication-text">Google Data Analytics</p>
+      </div>
+      </a>
+    </li>
+
+
+    
+    <li class="publication-post-item">
+        <a href="https://www.coursera.org/account/accomplishments/specialization/KXTTTFXQLQ6M" target="_blank">
+
+                      <figure class="publication-banner-box">
+                 <img src="./assets/images/googlebi.jpeg" alt="client logo" loading="lazy">
+            </figure>
+                <div class="publication-content">
+        <div class="publication-meta"></div>
+
+          <h3 class="h3 publication-item-title">Specialization Certificate</h3>
+          <p class="publication-text">Google Business Intelligence</p>
+      </div>
+      </a>
+    </li>
+
+
+    <li class="publication-post-item">
+        <a href="https://www.coursera.org/account/accomplishments/specialization/AV5SB4EH2A54" target="_blank">
+
+                      <figure class="publication-banner-box">
+                 <img src="./assets/images/SAS.jpg" alt="client logo" loading="lazy">
+            </figure>
+                <div class="publication-content">
+        <div class="publication-meta"></div>
+
+          <h3 class="h3 publication-item-title">Specialization Certificate</h3>
+          <p class="publication-text">SAS Visual Business Analytics</p>
+      </div>
+      </a>
+    </li>
+
+    
+    <li class="publication-post-item">
+              <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/1ed6c691ee6c420507b768ddfb09734356891279" target="_blank">
+           <figure class="publication-banner-box">
+                <img src="./assets/images/sql.png" alt="client logo" loading="lazy">
+            </figure>
+      <div class="publication-content">
+        <div class="publication-meta"></div>
+
+          <h3 class="h3 publication-item-title">Statement of Accomplishment</h3>
+          <p class="publication-text">Introduction to SQL</p>
+      </div>
+                        </a>
+
+    </li>
+
+    <li class="publication-post-item">
+
+              <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/b899684dd6ad250820e7a3bffd2ac5e2ab8160ba" target="_blank">
+            <figure class="publication-banner-box">
+                <img src="./assets/images/python.jpg" alt="client logo" loading="lazy">
+            </figure>
+      <div class="publication-content">
+        <div class="publication-meta"></div>
+
+          <h3 class="h3 publication-item-title">Statement of Accomplishment</h3>
+          <p class="publication-text">Introduction to Python</p>
+      </div>
+                        </a>
+
+    </li>
+
+    <li class="publication-post-item">
+
+              <a href="https://www.cloudskillsboost.google/public_profiles/89d29639-8df2-4791-8e0d-c5468ee49ed0/badges/3900646" target="_blank">
+            <figure class="publication-banner-box">
+              <img src="./assets/images/GENAI2.png" alt="client logo" loading="lazy">
+            </figure>
+      <div class="publication-content">
+        <div class="publication-meta"></div>
+
+          <h3 class="h3 publication-item-title">Completion Badge</h3>
+          <p class="publication-text">Introduction to Generative AI</p>
+      </div>
+                        </a>
+
+    </li>
+
+  </ul>
+
+
+          
+</section>
+
+
+      </article>
+
+
+
+
+
+      <!--
+        - #Projects
+  
+
+
+      <article class="publication" data-page="publication">
+
+        <header>
+          <h2 class="h2 article-title">Projects</h2>
+        </header>
+
+        <section class="publication-posts">
+
+          <ul class="publication-posts-list">
+
+           
+            
+            <li class="publication-post-item">
+              <a href="https://dx.doi.org/10.2139/ssrn.3703913" target="_blank">
+                
+                <figure class="publication-banner-box">
+                  <img src="./assets/images/publication-1.jpg" alt="Spoken Language Understanding using Pre-
+training Technique" loading="lazy">
+                </figure>
+
+                <div class="publication-content">
+
+                  <div class="publication-meta">
+                    <p class="publication-category">Research Paper</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Oct 5, 2020</time>
+                  </div>
+
+                  <h3 class="h3 publication-item-title">Spoken Language Understanding using Pre-
+training Technique</h3>
+
+                  <p class="publication-text">
+Proceedings of the International Conference on Recent Advances in Computational Techniques (IC-RACT) 2020
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="publication-post-item">
+              <a href="https://app.visily.ai/projects/6373667c-6f41-458d-8aca-c491f28a71b2/boards/467141/presenter?play-mode=Prototype" target="_blank">
+
+                <figure class="publication-banner-box">
+                  <img src="./assets/images/prototype.jpg" alt="UI Prototype - Information System Analysis" loading="lazy">
+                </figure>
+
+                <div class="publication-content">
+
+                  <div class="publication-meta">
+                    <p class="publication-category">Prototype</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Jan 2023</time>
+                  </div>
+
+                  <h3 class="h3 publication-item-title">UI Prototype - Information System Analysis</h3>
+
+                  <p class="publication-text">
+                    Working UI prototype of a case study called "Meeting Makers".
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+
+
+
+        <section class="publication-posts">
+  <h2 class="h2 article-title">
+    <a href="https://www.linkedin.com/in/rahulkotian26/details/certifications/" target="_blank" style="color: white;">
+      Certifications
+      <i class="fas fa-external-link-alt" style="margin-left: 5px;"></i>
+    </a>
+  </h2>
+
+  <ul class="publication-posts-list">
+
+ <li class="publication-post-item">
+        <a href="https://www.coursera.org/account/accomplishments/specialization/JS7LYV9UK9MA" target="_blank">
+
+                      <figure class="publication-banner-box">
+                 <img src="./assets/images/googleda.jpeg" alt="client logo" loading="lazy">
+            </figure>
+                <div class="publication-content">
+        <div class="publication-meta"></div>
+
+          <h3 class="h3 publication-item-title">Specialization Certificate</h3>
+          <p class="publication-text">Google Data Analytics</p>
+      </div>
+      </a>
+    </li>
+
+
+    
+    <li class="publication-post-item">
+        <a href="https://www.coursera.org/account/accomplishments/specialization/KXTTTFXQLQ6M" target="_blank">
+
+                      <figure class="publication-banner-box">
+                 <img src="./assets/images/googlebi.jpeg" alt="client logo" loading="lazy">
+            </figure>
+                <div class="publication-content">
+        <div class="publication-meta"></div>
+
+          <h3 class="h3 publication-item-title">Specialization Certificate</h3>
+          <p class="publication-text">Google Business Intelligence</p>
+      </div>
+      </a>
+    </li>
+
+
+    <li class="publication-post-item">
+        <a href="https://www.coursera.org/account/accomplishments/specialization/AV5SB4EH2A54" target="_blank">
+
+                      <figure class="publication-banner-box">
+                 <img src="./assets/images/SAS.jpg" alt="client logo" loading="lazy">
+            </figure>
+                <div class="publication-content">
+        <div class="publication-meta"></div>
+
+          <h3 class="h3 publication-item-title">Specialization Certificate</h3>
+          <p class="publication-text">SAS Visual Business Analytics</p>
+      </div>
+      </a>
+    </li>
+
+    
+    <li class="publication-post-item">
+              <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/1ed6c691ee6c420507b768ddfb09734356891279" target="_blank">
+           <figure class="publication-banner-box">
+                <img src="./assets/images/sql.png" alt="client logo" loading="lazy">
+            </figure>
+      <div class="publication-content">
+        <div class="publication-meta"></div>
+
+          <h3 class="h3 publication-item-title">Statement of Accomplishment</h3>
+          <p class="publication-text">Introduction to SQL</p>
+      </div>
+                        </a>
+
+    </li>
+
+    <li class="publication-post-item">
+
+              <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/b899684dd6ad250820e7a3bffd2ac5e2ab8160ba" target="_blank">
+            <figure class="publication-banner-box">
+                <img src="./assets/images/python.jpg" alt="client logo" loading="lazy">
+            </figure>
+      <div class="publication-content">
+        <div class="publication-meta"></div>
+
+          <h3 class="h3 publication-item-title">Statement of Accomplishment</h3>
+          <p class="publication-text">Introduction to Python</p>
+      </div>
+                        </a>
+
+    </li>
+
+    <li class="publication-post-item">
+
+              <a href="https://www.cloudskillsboost.google/public_profiles/89d29639-8df2-4791-8e0d-c5468ee49ed0/badges/3900646" target="_blank">
+            <figure class="publication-banner-box">
+              <img src="./assets/images/GENAI2.png" alt="client logo" loading="lazy">
+            </figure>
+      <div class="publication-content">
+        <div class="publication-meta"></div>
+
+          <h3 class="h3 publication-item-title">Completion Badge</h3>
+          <p class="publication-text">Introduction to Generative AI</p>
+      </div>
+                        </a>
+
+    </li>
+
+  </ul>
+
+
+          
+</section>
+
+
+      </article>
+
+    -->
+
+
+
+      
+      <!--
+        - #CONTACT
+      -->
 
       <article class="contact" data-page="contact">
-        </article>
+
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+
+        <section class="mapbox" data-mapbox>
+          <figure>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193596.0092777845!2d-74.14448737568156!3d40.697370921105396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1707461200429!5m2!1sen!2sus"
+             
+              width="400" height="300" loading="lazy"></iframe>
+          </figure>
+        </section>
+        
+        <section class="contact-form">
+          <h3 class="h3 form-title">Contact Form</h3>
+          <form action="https://formspree.io/f/xrgwnblo" method="POST">
+            <div class="input-wrapper">
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+              <input type="email" name="_replyto" class="form-input" placeholder="Email address" required data-form-input>
+            </div>
+            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+            <button class="form-btn" type="submit" data-form-btn>
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button>
+          </form>
+        </section>
+
+      </article>
+
     </div>
 
   </main>
 
 
 
+  <!--
+    - custom js link
+  -->
   <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
