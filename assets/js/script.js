@@ -136,11 +136,11 @@ for (let i = 0; i < formInputs.length; i++) {
 
 
 
-// page navigation variables
+// page navigation variables (UPDATED)
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
 
-// add event to all nav link
+// add event to all nav link (UPDATED)
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
 
@@ -157,7 +157,6 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
-
 
 
 
