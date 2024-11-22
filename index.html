@@ -1707,56 +1707,52 @@ Proceedings of the International Conference on Recent Advances in Computational 
 
 
 
+<div id="pdf-viewer" class="pdf-container">
+    <iframe 
+        id="pdf-iframe" 
+        src="path/to/your/pdf.pdf" 
+        width="100%" 
+        height="600px"
+        style="border:none;"
+    ></iframe>
+</div>
 
-<article class="presentations" data-page="presentations">
-    <header>
-        <h2 class="section-title">Presentations</h2>
-    </header>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const pdfViewer = document.getElementById('pdf-viewer');
+    const pdfIframe = document.getElementById('pdf-iframe');
     
-    <div id="pdf-viewer" class="pdf-container">
-        <iframe 
-            id="pdf-iframe" 
-            src="assets/presentations/portfolio-presentation.pdf" 
-            title="Professional Presentations"
-            allowfullscreen
-        ></iframe>
-    </div>
+    let isScrolling = false;
+    let lastScrollTop = 0;
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const pdfViewer = document.getElementById('pdf-viewer');
-            const pdfIframe = document.getElementById('pdf-iframe');
+    pdfViewer.addEventListener('scroll', () => {
+        const currentScrollTop = pdfViewer.scrollTop;
+        
+        if (!isScrolling && Math.abs(currentScrollTop - lastScrollTop) > 50) {
+            isScrolling = true;
+            lastScrollTop = currentScrollTop;
 
-            let isScrolling = false;
+            const scrollPercentage = 
+                currentScrollTop / (pdfViewer.scrollHeight - pdfViewer.clientHeight);
 
-            pdfViewer.addEventListener('scroll', () => {
-                if (!isScrolling) {
-                    isScrolling = true;
-                    setTimeout(() => {
-                        const scrollPercentage = 
-                            pdfViewer.scrollTop / (pdfViewer.scrollHeight - pdfViewer.clientHeight);
-                        
-                        if (scrollPercentage >= 0.9) {
-                            pdfIframe.contentWindow.postMessage(
-                                { type: 'nextPage' }, 
-                                window.location.origin
-                            );
-                        }
-                        isScrolling = false;
-                    }, 200);
+            if (scrollPercentage >= 0.9) {
+                try {
+                    pdfIframe.contentWindow.postMessage(
+                        { type: 'autoScroll', action: 'nextPage' }, 
+                        '*'
+                    );
+                } catch (error) {
+                    console.error('Scroll messaging failed:', error);
                 }
-            });
+            }
 
-            window.addEventListener('message', (event) => {
-                if (event.origin === window.location.origin) {
-                    if (event.data.type === 'pdfLoaded') {
-                        pdfViewer.scrollTop = 0;
-                    }
-                }
-            });
-        });
-    </script>
-</article>
+            setTimeout(() => {
+                isScrolling = false;
+            }, 250);
+        }
+    });
+});
+</script>
 
 
        
