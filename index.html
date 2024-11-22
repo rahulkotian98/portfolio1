@@ -1704,39 +1704,55 @@ Proceedings of the International Conference on Recent Advances in Computational 
     -->
 
 
-
 <article class="presentations" data-page="presentations">
   <header>
     <h2 class="h2 article-title">Presentations</h2>
   </header>
 
-  <div id="pdf-viewer" style="width: 100%; height: 600px; overflow: auto;">
-    <iframe id="pdf-iframe" src="assets/images/2956.pdf" style="width: 100%; height: 100%;"></iframe>
+  <!-- First PDF Viewer -->
+  <div id="pdf-viewer-1" style="width: 100%; height: 600px; overflow: auto;">
+    <iframe id="pdf-iframe-1" src="assets/images/2956.pdf" style="width: 100%; height: 100%;"></iframe>
+  </div>
+
+  <!-- Second PDF Viewer -->
+  <div id="pdf-viewer-2" style="width: 100%; height: 600px; overflow: auto; margin-top: 20px;">
+    <iframe id="pdf-iframe-2" src="assets/images/2923.pdf" style="width: 100%; height: 100%;"></iframe>
+  </div>
+
+  <!-- Third PDF Viewer -->
+  <div id="pdf-viewer-3" style="width: 100%; height: 600px; overflow: auto; margin-top: 20px;">
+    <iframe id="pdf-iframe-3" src="assets/images/2924.pdf" style="width: 100%; height: 100%;"></iframe>
   </div>
 
   <script>
-    const pdfViewer = document.getElementById('pdf-viewer');
-    const pdfIframe = document.getElementById('pdf-iframe');
-    let scrolling = false;
+    const pdfViewers = [
+      { viewer: document.getElementById('pdf-viewer-1'), iframe: document.getElementById('pdf-iframe-1') },
+      { viewer: document.getElementById('pdf-viewer-2'), iframe: document.getElementById('pdf-iframe-2') },
+      { viewer: document.getElementById('pdf-viewer-3'), iframe: document.getElementById('pdf-iframe-3') }
+    ];
 
-    // Handle scroll event for PDF
-    pdfViewer.addEventListener('scroll', () => {
-      if (!scrolling) {
-        scrolling = true;
-        setTimeout(() => {
-          const scrollPercentage = pdfViewer.scrollTop / (pdfViewer.scrollHeight - pdfViewer.clientHeight);
-          if (scrollPercentage >= 0.9) {
-            pdfIframe.contentWindow.postMessage({type: 'nextPage'}, '*');
-          }
-          scrolling = false;
-        }, 100);
-      }
-    });
+    pdfViewers.forEach((pdf, index) => {
+      let scrolling = false;
 
-    window.addEventListener('message', (event) => {
-      if (event.data.type === 'pdfLoaded') {
-        pdfViewer.scrollTop = 0;
-      }
+      // Handle scroll event for each PDF
+      pdf.viewer.addEventListener('scroll', () => {
+        if (!scrolling) {
+          scrolling = true;
+          setTimeout(() => {
+            const scrollPercentage = pdf.viewer.scrollTop / (pdf.viewer.scrollHeight - pdf.viewer.clientHeight);
+            if (scrollPercentage >= 0.9) {
+              pdf.iframe.contentWindow.postMessage({ type: 'nextPage' }, '*');
+            }
+            scrolling = false;
+          }, 100);
+        }
+      });
+
+      window.addEventListener('message', (event) => {
+        if (event.data.type === 'pdfLoaded') {
+          pdf.viewer.scrollTop = 0;
+        }
+      });
     });
 
     // Smooth scroll to presentations section when the tab is clicked
@@ -1751,7 +1767,6 @@ Proceedings of the International Conference on Recent Advances in Computational 
     });
   </script>
 </article>
-
 
        
 
