@@ -1722,6 +1722,14 @@ Proceedings of the International Conference on Recent Advances in Computational 
     const pdfIframe = document.getElementById('pdf-iframe');
     let scrolling = false;
 
+    // Auto-scroll to the presentations section when clicked
+    window.addEventListener('message', (event) => {
+      if (event.data.type === 'pdfLoaded') {
+        pdfViewer.scrollTop = 0;
+      }
+    });
+
+    // Handle scroll event for PDF
     pdfViewer.addEventListener('scroll', () => {
       if (!scrolling) {
         scrolling = true;
@@ -1735,10 +1743,15 @@ Proceedings of the International Conference on Recent Advances in Computational 
       }
     });
 
-    window.addEventListener('message', (event) => {
-      if (event.data.type === 'pdfLoaded') {
-        pdfViewer.scrollTop = 0;
-      }
+    // Smooth scroll to presentations section when the tab is clicked
+    document.querySelectorAll('.navbar-link').forEach(link => {
+      link.addEventListener('click', () => {
+        const targetPage = link.getAttribute('data-nav-link');
+        if (targetPage === 'presentations') {
+          // Scroll smoothly to the presentations section
+          document.querySelector('.presentations').scrollIntoView({ behavior: 'smooth' });
+        }
+      });
     });
   </script>
 </article>
