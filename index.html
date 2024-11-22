@@ -1709,52 +1709,57 @@ Proceedings of the International Conference on Recent Advances in Computational 
 
 
 <article class="presentations" data-page="presentations">
-  <header>
-    <h2 class="h2 article-title">Presentations</h2>
-  </header>
+    <header>
+        <h2 class="section-title">Presentations</h2>
+    </header>
+    
+    <div id="pdf-viewer" class="pdf-container">
+        <iframe 
+            id="pdf-iframe" 
+            src="assets/presentations/portfolio-presentation.pdf" 
+            title="Professional Presentations"
+            allowfullscreen
+        ></iframe>
+    </div>
 
-  <div id="pdf-viewer" style="width: 100%; height: 600px; overflow: auto;">
-    <iframe id="pdf-iframe" src="assets/images/2956.pdf" style="width: 100%; height: 100%;"></iframe>
-  </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const pdfViewer = document.getElementById('pdf-viewer');
+            const pdfIframe = document.getElementById('pdf-iframe');
 
-  <script>
-    const pdfViewer = document.getElementById('pdf-viewer');
-    const pdfIframe = document.getElementById('pdf-iframe');
-    let scrolling = false;
+            let isScrolling = false;
 
-    // Auto-scroll to the presentations section when clicked
-    window.addEventListener('message', (event) => {
-      if (event.data.type === 'pdfLoaded') {
-        pdfViewer.scrollTop = 0;
-      }
-    });
+            pdfViewer.addEventListener('scroll', () => {
+                if (!isScrolling) {
+                    isScrolling = true;
+                    setTimeout(() => {
+                        const scrollPercentage = 
+                            pdfViewer.scrollTop / (pdfViewer.scrollHeight - pdfViewer.clientHeight);
+                        
+                        if (scrollPercentage >= 0.9) {
+                            pdfIframe.contentWindow.postMessage(
+                                { type: 'nextPage' }, 
+                                window.location.origin
+                            );
+                        }
+                        isScrolling = false;
+                    }, 200);
+                }
+            });
 
-    // Handle scroll event for PDF
-    pdfViewer.addEventListener('scroll', () => {
-      if (!scrolling) {
-        scrolling = true;
-        setTimeout(() => {
-          const scrollPercentage = pdfViewer.scrollTop / (pdfViewer.scrollHeight - pdfViewer.clientHeight);
-          if (scrollPercentage >= 0.9) {
-            pdfIframe.contentWindow.postMessage({type: 'nextPage'}, '*');
-          }
-          scrolling = false;
-        }, 100);
-      }
-    });
-
-    // Smooth scroll to presentations section when the tab is clicked
-    document.querySelectorAll('.navbar-link').forEach(link => {
-      link.addEventListener('click', () => {
-        const targetPage = link.getAttribute('data-nav-link');
-        if (targetPage === 'presentations') {
-          // Scroll smoothly to the presentations section
-          document.querySelector('.presentations').scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    });
-  </script>
+            window.addEventListener('message', (event) => {
+                if (event.origin === window.location.origin) {
+                    if (event.data.type === 'pdfLoaded') {
+                        pdfViewer.scrollTop = 0;
+                    }
+                }
+            });
+        });
+    </script>
 </article>
+
+
+       
 
       
       <!--
