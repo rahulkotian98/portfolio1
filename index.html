@@ -1702,7 +1702,6 @@ Proceedings of the International Conference on Recent Advances in Computational 
       </article>
 
     -->
-
 <article class="presentations" data-page="presentations">
   <header>
     <h2 class="h2 article-title">Presentations</h2>
@@ -1752,6 +1751,26 @@ Proceedings of the International Conference on Recent Advances in Computational 
     pdfViewers.forEach((pdf) => {
       let scrolling = false;
 
+      // Auto-scroll functionality
+      const autoScroll = () => {
+        if (scrolling) return;
+        scrolling = true;
+
+        const scrollInterval = setInterval(() => {
+          pdf.viewer.scrollTop += 1; // Scroll down by one pixel
+          // Check if we've reached the bottom of the viewer
+          if (pdf.viewer.scrollTop + pdf.viewer.clientHeight >= pdf.viewer.scrollHeight) {
+            clearInterval(scrollInterval); // Stop scrolling when reaching the bottom
+            scrolling = false;
+            pdf.viewer.scrollTop = 0; // Reset to top for next cycle
+            setTimeout(autoScroll, 2000); // Wait before starting again
+          }
+        }, 50); // Adjust this value to control scroll speed
+      };
+
+      // Start auto-scrolling for each PDF viewer
+      autoScroll();
+
       // Handle scroll event for each PDF
       pdf.viewer.addEventListener('scroll', () => {
         if (!scrolling) {
@@ -1783,7 +1802,11 @@ Proceedings of the International Conference on Recent Advances in Computational 
         }
       });
     });
-  </script>
+    
+    // Start auto-scrolling for the first PDF viewer as an example
+    autoScroll();
+    
+</script>
 </article>
 
        
