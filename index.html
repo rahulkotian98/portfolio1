@@ -1708,47 +1708,33 @@ Proceedings of the International Conference on Recent Advances in Computational 
 
 
 
-      <article class="android-apps" data-page="android-apps"> 
-        <header>
-          <h2 class="h2 article-title">Android Apps</h2>
-        </header>
+<article class="android-apps" data-page="android-apps">
+  <header>
+    <h2 class="h2 article-title">Presentations</h2>
+  </header>
+  
+  <div id="pdf-container" style="height: 80vh; overflow: auto;">
+    <embed src="assets/images/2956.pdf" type="application/pdf" width="100%" height="100%" />
+  </div>
+</article>
 
-        <section class="app-posts">
-          <ul class="app-posts-list">
-            <li class="app-post-item"> 
-              <a href="your_app_link" target="_blank">
-                <figure class="app-banner-box">
-                  <img src="./assets/images/your_app_image1.png" alt="App 1 Name" loading="lazy">
-                </figure>
+<script>
+  const pdfContainer = document.getElementById('pdf-container');
+  let isScrolling = false;
 
-                <div class="app-content">
-                  <h3 class="h3 app-item-title">App 1 Name</h3>
-                  <p class="app-text">
-                    Short description of App 1. 
-                  </p>
-                </div>
-              </a>
-            </li>
-
-            <li class="app-post-item">
-              <a href="your_another_app_link" target="_blank">
-                <figure class="app-banner-box">
-                  <img src="./assets/images/your_app_image2.png" alt="App 2 Name" loading="lazy">
-                </figure>
-
-                <div class="app-content">
-                  <h3 class="h3 app-item-title">App 2 Name</h3>
-                  <p class="app-text">
-                    Short description of App 2.
-                  </p>
-                </div>
-              </a>
-            </li>
-
-          </ul>
-        </section>
-      </article>
-
+  pdfContainer.addEventListener('scroll', () => {
+    if (!isScrolling) {
+      window.requestAnimationFrame(() => {
+        const scrollPercentage = pdfContainer.scrollTop / (pdfContainer.scrollHeight - pdfContainer.clientHeight);
+        if (scrollPercentage >= 0.9) {
+          pdfContainer.scrollTop += pdfContainer.clientHeight;
+        }
+        isScrolling = false;
+      });
+      isScrolling = true;
+    }
+  });
+</script>
 
       
       <!--
