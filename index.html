@@ -1743,7 +1743,7 @@ Proceedings of the International Conference on Recent Advances in Computational 
     document.querySelectorAll('.navbar-link').forEach(link => {
       link.addEventListener('click', () => {
         const targetPage = link.getAttribute('data-nav-link');
-        if (targetPage === 'android-apps') { // Ensure this matches your presentations tab's data-nav-link
+        if (targetPage === 'presentations') { // Ensure this matches your presentations tab's data-nav-link
           // Scroll smoothly to the presentations section
           document.querySelector('.presentations').scrollIntoView({ behavior: 'smooth' });
         }
