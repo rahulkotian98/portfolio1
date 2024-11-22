@@ -1702,80 +1702,91 @@ Proceedings of the International Conference on Recent Advances in Computational 
       </article>
 
     -->
-<section class="presentations" data-page="presentations">
-    <header>
-        <h2 class="h2 article-title">Presentations</h2>
-    </header>
+<article class="presentations" data-page="presentations">
+  <header>
+    <h2 class="h2 article-title">Presentations</h2>
+  </header>
 
-    <section class="stickley-furniture" style="margin-top: 30px;">
-        <h3 class="h3 article-subtitle" style="border-bottom: 2px solid #007bff; padding-bottom: 10px; margin-bottom: 20px;">Stickley Furniture</h3>
+  <!-- Stickley Furniture Subtopic -->
+  <section class="stickley-furniture" style="margin-top: 30px;">
+    <h3 class="h3 article-subtitle" style="border-bottom: 2px solid #007bff; padding-bottom: 10px; margin-bottom: 20px;">Stickley Furniture</h3>
 
-        <div id="pdf-viewer-1" style="width: 100%; height: 600px; overflow: hidden; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); padding: 10px;">
-            <iframe id="pdf-iframe-1" src="assets/images/2956.pdf" style="width: 100%; height: 100%; border: none;"></iframe>
-        </div>
+    <!-- First PDF Viewer -->
+    <div id="pdf-viewer-1" style="width: 100%; height: 600px; overflow: hidden; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); padding: 10px;">
+      <iframe id="pdf-iframe-1" src="assets/images/2956.pdf" style="width: 100%; height: 100%; border: none;"></iframe>
+    </div>
 
-        <div id="pdf-viewer-2" style="width: 100%; height: 600px; overflow: hidden; margin-top: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); padding: 10px;">
-            <iframe id="pdf-iframe-2" src="assets/images/2923.pdf" style="width: 100%; height: 100%; border: none;"></iframe>
-        </div>
+    <!-- Second PDF Viewer -->
+    <div id="pdf-viewer-2" style="width: 100%; height: 600px; overflow: hidden; margin-top: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); padding: 10px;">
+      <iframe id="pdf-iframe-2" src="assets/images/2923.pdf" style="width: 100%; height: 100%; border: none;"></iframe>
+    </div>
 
-        <div id="pdf-viewer-3" style="width: 100%; height: 600px; overflow: hidden; margin-top: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); padding: 10px;">
-            <iframe id="pdf-iframe-3" src="assets/images/2924.pdf" style="width: 100%; height: 100%; border: none;"></iframe>
-        </div>
+    <!-- Third PDF Viewer -->
+    <div id="pdf-viewer-3" style="width: 100%; height: 600px; overflow: hidden; margin-top: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); padding: 10px;">
+      <iframe id="pdf-iframe-3" src="assets/images/2924.pdf" style="width: 100%; height: 100%; border: none;"></iframe>
+    </div>
 
-        <style>
-            .stickley-furniture { 
-                background-color: #f9f9f9; 
-                padding: 20px; 
-                border-radius: 8px; 
-                box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+    <!-- Additional Styling for Better Layout -->
+    <style>
+      .stickley-furniture {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      }
+      .article-subtitle {
+        color: #333;
+      }
+    </style>
+  
+  </section>
+
+<script>
+const pdfViewers = [
+    { viewerId: 'pdf-viewer-1', iframeId: 'pdf-iframe-1' },
+    { viewerId: 'pdf-viewer-2', iframeId: 'pdf-iframe-2' },
+    { viewerId: 'pdf-viewer-3', iframeId: 'pdf-iframe-3' }
+];
+
+pdfViewers.forEach((pdf) => {
+    const viewer = document.getElementById(pdf.viewerId);
+    
+    // Auto-scroll functionality
+    const autoScroll = () => {
+        const iframe = document.getElementById(pdf.iframeId);
+        let scrollTop = viewer.scrollTop;
+
+        const scrollInterval = setInterval(() => {
+            scrollTop += 1; // Scroll down by one pixel
+            viewer.scrollTop = scrollTop;
+
+            // Check if we've reached the bottom of the viewer
+            if (scrollTop + viewer.clientHeight >= viewer.scrollHeight) {
+                clearInterval(scrollInterval); // Stop scrolling when reaching the bottom
+                setTimeout(() => {
+                    scrollTop = -viewer.clientHeight; // Reset to top for next cycle
+                    autoScroll(); // Start scrolling again
+                }, 2000); // Wait before starting again
             }
-            .article-subtitle { 
-                color: #333; 
-            }
-        </style>
-    </section>
+        }, 50); // Adjust this value to control scroll speed
+    };
 
-    <script>
-        const pdfViewers = [
-            { viewerId: 'pdf-viewer-1', iframeId: 'pdf-iframe-1' },
-            { viewerId: 'pdf-viewer-2', iframeId: 'pdf-iframe-2' },
-            { viewerId: 'pdf-viewer-3', iframeId: 'pdf-iframe-3' }
-        ];
+    // Start auto-scrolling for each PDF viewer
+    autoScroll();
+});
 
-        pdfViewers.forEach((pdf) => {
-            const viewer = document.getElementById(pdf.viewerId);
-
-            const autoScroll = () => {
-                const iframe = document.getElementById(pdf.iframeId);
-                let scrollTop = viewer.scrollTop;
-
-                const scrollInterval = setInterval(() => {
-                    scrollTop += 1;
-                    viewer.scrollTop = scrollTop;
-
-                    if (scrollTop + viewer.clientHeight >= viewer.scrollHeight) {
-                        clearInterval(scrollInterval);
-                        setTimeout(() => {
-                            scrollTop = -viewer.clientHeight;
-                            autoScroll();
-                        }, 2000);
-                    }
-                }, 50);
-            };
-
-            autoScroll();
-        });
-
-        document.querySelectorAll('.navbar-link').forEach(link => {
-            link.addEventListener('click', () => {
-                const targetPage = link.getAttribute('data-nav-link');
-                if (targetPage === 'presentations') {
-                    document.querySelector('.presentations').scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-    </script>
-</section>
+// Smooth scroll to presentations section when the tab is clicked
+document.querySelectorAll('.navbar-link').forEach(link => {
+    link.addEventListener('click', () => {
+        const targetPage = link.getAttribute('data-nav-link');
+        if (targetPage === 'presentations') { // Ensure this matches your presentations tab's data-nav-link
+            // Scroll smoothly to the presentations section
+            document.querySelector('.presentations').scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+</script>
+</article>
        
 
       
