@@ -1712,29 +1712,36 @@ Proceedings of the International Conference on Recent Advances in Computational 
   <header>
     <h2 class="h2 article-title">Presentations</h2>
   </header>
-  
-  <div id="pdf-container" style="height: 80vh; overflow: auto;">
-    <embed src="assets/images/2956.pdf" type="application/pdf" width="100%" height="100%" />
+
+  <div id="pdf-viewer" style="width: 100%; height: 600px; overflow: auto;">
+    <iframe id="pdf-iframe" src="path/to/your/presentation.pdf" style="width: 100%; height: 100%;"></iframe>
   </div>
+
+  <script>
+    const pdfViewer = document.getElementById('pdf-viewer');
+    const pdfIframe = document.getElementById('pdf-iframe');
+    let scrolling = false;
+
+    pdfViewer.addEventListener('scroll', () => {
+      if (!scrolling) {
+        scrolling = true;
+        setTimeout(() => {
+          const scrollPercentage = pdfViewer.scrollTop / (pdfViewer.scrollHeight - pdfViewer.clientHeight);
+          if (scrollPercentage >= 0.9) {
+            pdfIframe.contentWindow.postMessage({type: 'nextPage'}, '*');
+          }
+          scrolling = false;
+        }, 100);
+      }
+    });
+
+    window.addEventListener('message', (event) => {
+      if (event.data.type === 'pdfLoaded') {
+        pdfViewer.scrollTop = 0;
+      }
+    });
+  </script>
 </article>
-
-<script>
-  const pdfContainer = document.getElementById('pdf-container');
-  let isScrolling = false;
-
-  pdfContainer.addEventListener('scroll', () => {
-    if (!isScrolling) {
-      window.requestAnimationFrame(() => {
-        const scrollPercentage = pdfContainer.scrollTop / (pdfContainer.scrollHeight - pdfContainer.clientHeight);
-        if (scrollPercentage >= 0.9) {
-          pdfContainer.scrollTop += pdfContainer.clientHeight;
-        }
-        isScrolling = false;
-      });
-      isScrolling = true;
-    }
-  });
-</script>
 
       
       <!--
